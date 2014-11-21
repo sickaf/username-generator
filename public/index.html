@@ -14,14 +14,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Twitter web intent -->
+    <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
 
   </head>
   <body>
     <div class="container-fluid">
       <p>Your username is:</p>
-      <h1 id="username">username</h1>
+      <h1 id="username"></h1>
       <br>
       <button type="button" class="btn btn-default" id="new">New Username</button>
+      <br>
+      <br>
+      <a href='#'>Tweet this username</a>
     </div>
 
     <script>
@@ -31,11 +36,11 @@
       });
 
       function refreshUsername() {
-          // $.getJSON('api/name', function( data ) {
-          //   console.log(data);  
-          // });
-
-        $('#username').text('poopstain420 ' + x);
+          $.get('api/get-username', function( data ) {
+            $('#username').text(data);
+            var tweet = 'https://twitter.com/intent/tweet?text=' + 'changing+my+twitter+name+to:+' + data;
+            $("a").attr("href", tweet);
+          });
       }
 
       refreshUsername();

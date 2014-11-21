@@ -7,6 +7,10 @@ body {
 	font-size: 40px;
 }
 
+#new {
+	width: 200px;
+}
+
 @media(min-width:768px) {
 	#username {
 		font-size: 80px;
