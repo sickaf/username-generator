@@ -4,15 +4,18 @@ body {
 }
 
 #username {
+	padding: 20px;
 	font-size: 40px;
+	position: relative;
 }
 
 #new {
 	width: 200px;
+	bor
 }
 
 @media(min-width:768px) {
 	#username {
-		font-size: 80px;
+		font-size: 60px;
 	}
 }
