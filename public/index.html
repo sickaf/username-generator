@@ -16,12 +16,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <!-- Twitter web intent -->
     <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
+    <!-- Spinner -->
+    <script src="javascripts/spin.min.js"></script>
 
   </head>
   <body>
     <div class="container-fluid">
-      <p>Your username is:</p>
-      <h1 id="username"></h1>
+      <p id="top">Your username is:</p>
+      <div>
+        <h1 id="username"></h1>
+      </div>
       <br>
       <button type="button" class="btn btn-default" id="new">New Username</button>
       <br>
@@ -36,15 +40,49 @@
       });
 
       function refreshUsername() {
+          $('#username').text('');
+          setLoading(true);
           $.get('api/get-username', function( data ) {
+            setLoading(false);
             $('#username').text(data);
             var tweet = 'https://twitter.com/intent/tweet?text=' + 'changing+my+twitter+name+to:+' + data;
             $("a").attr("href", tweet);
           });
       }
 
+      var spinner;
+
+      function setLoading(loading) {
+
+        if (loading) {
+          var opts = {
+            lines: 11, // The number of lines to draw
+            length: 6, // The length of each line
+            width: 2, // The line thickness
+            radius: 14, // The radius of the inner circle
+            corners: 1, // Corner roundness (0..1)
+            rotate: 0, // The rotation offset
+            direction: 1, // 1: clockwise, -1: counterclockwise
+            color: '#111', // #rgb or #rrggbb or array of colors
+            speed: 1.6, // Rounds per second
+            trail: 51, // Afterglow percentage
+            shadow: false, // Whether to render a shadow
+            hwaccel: false, // Whether to use hardware acceleration
+            className: 'spinner', // The CSS class to assign to the spinner
+            zIndex: 2e9 // The z-index (defaults to 2000000000)
+          };
+
+          spinner = new Spinner(opts).spin();
+          $('#username').append(spinner.el);
+
+        } else {
+          spinner.el.remove();
+        }
+      }
+
       refreshUsername();
 
     </script>
+
   </body>
 </html>
