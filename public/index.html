@@ -17,15 +17,29 @@
 
   </head>
   <body>
-    <div class="container">
-    <p>Your username is:</p>
-    <h1 id="username">username</h1>
-    <br>
-    <button type="button" class="btn btn-default">New Username</button>
+    <div class="container-fluid">
+      <p>Your username is:</p>
+      <h1 id="username">username</h1>
+      <br>
+      <button type="button" class="btn btn-default" id="new">New Username</button>
     </div>
 
     <script>
-      $('#username').text('poopstain420');
+
+      $('#new').click(function() {
+        refreshUsername();
+      });
+
+      function refreshUsername() {
+          // $.getJSON('api/name', function( data ) {
+          //   console.log(data);  
+          // });
+
+        $('#username').text('poopstain420 ' + x);
+      }
+
+      refreshUsername();
+
     </script>
   </body>
 </html>

@@ -4,5 +4,11 @@ body {
 }
 
 #username {
-	font-size: 80px;
+	font-size: 40px;
+}
+
+@media(min-width:768px) {
+	#username {
+		font-size: 80px;
+	}
 }
