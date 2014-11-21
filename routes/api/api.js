@@ -14,14 +14,14 @@ module.exports = function(app) {
   						'uncool', 'fartridden', 'decrepit', 'justbad',    'impressively',
   						'gross',  'pathetic',   'floppy',   'chrisbrown', 'hurt',
   						'DJ',     'fragile',    'used',     'abused',     'shit',
-  						'fuck' ];
+  						'fuck', ''];
   		
   		var descriptors = [	'fan',        'dude',           'man',       'doctor',   'expert', 
   							'thug',       'hero',           'king',      'queen',    'idiot',
   							'queef',      'muscles',        'splatter',  'satan',    'worshipper', 
   							'virgin',     'boy',            'girl',      'badbitch', 'sack',
   							'loser',      'cultworshipper', 'astronaut', 'playboy',  'pounder',
-  							'asstronaut' ];
+  							'asstronaut', '' ];
   		var numbers = ['420','69',''];
 
   		var noun = nouns[Math.floor(Math.random() * nouns.length)];
