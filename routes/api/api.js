@@ -2,7 +2,7 @@ module.exports = function(app) {
 
 	// User API Methods
 
-	app.get('/api/getUsername', function (req, res){			
+	app.get('/api/get-username', function (req, res){			
 		res.send(randomUsername());
 	});
 
