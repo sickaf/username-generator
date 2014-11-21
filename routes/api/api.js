@@ -7,11 +7,19 @@ module.exports = function(app) {
 	});
 
 	function randomUsername() {
-  		var nouns = ['fart', 'weed', 'poop', 'snowboard', 'longboarding', 'blaze',      'pussy',  'meat',       'slippery',
-  					 'dumb', 'heady','messy','drunk',     'blood',        'unintended', 'uncool', 'fartridden', 'decrepit'];
-  		var descriptors = ['fan',     'dude',     'man',   'doctor',     'expert', 'thug', 'hero', 'king', 'queen','idiot','queef',
-  		                   'muscles', 'splatter', 'satan', 'worshipper', 'virgin', 'boy',  'girl', 'badbitch'];
-  		var numbers = ['420','69'];
+  		
+  		var nouns = [	'fart',   'weed',       'poop',     'snowboard',  'longboarding', 
+  						'blaze',  'pussy',      'meat',     'slippery',   'dumb', 
+  						'heady',  'messy',      'drunk',    'blood',      'unintended', 
+  						'uncool', 'fartridden', 'decrepit', 'justbad',    'impressively',
+  						'gross',  'pathetic',   'floppy',   'chrisbrown', 'hurt'];
+  		
+  		var descriptors = [	'fan',    'dude',    'man',      'doctor',   'expert', 
+  							'thug',   'hero',    'king',     'queen',    'idiot',
+  							'queef',  'muscles', 'splatter', 'satan',    'worshipper', 
+  							'virgin', 'boy',     'girl',     'badbitch', 'sack' ];
+  		var numbers = ['420','69','',''];
+
   		var noun = nouns[Math.floor(Math.random() * nouns.length)];
   		noun = noun.charAt(0).toUpperCase() + noun.substring(1);
   		var descriptor = descriptors[Math.floor(Math.random() * descriptors.length)];
