@@ -7,9 +7,8 @@ app.set('port', port);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-	// res.render('index');
-	res.send('HIIIIIIIIIII whats up.  Cody, replace this with rendering the front end.');
-});
+  res.send('index.html');
+})
 
 require('./routes/api/api.js')(app);
 
