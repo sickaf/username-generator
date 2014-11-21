@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Twitter web intent -->
+    <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
 
   </head>
   <body>
@@ -22,6 +24,9 @@
       <h1 id="username">username</h1>
       <br>
       <button type="button" class="btn btn-default" id="new">New Username</button>
+      <br>
+      <br>
+      <a href="https://twitter.com/intent/tweet?text=" id="twitter">Tweet this username</a>
     </div>
 
     <script>
@@ -31,11 +36,9 @@
       });
 
       function refreshUsername() {
-          // $.getJSON('api/name', function( data ) {
-          //   console.log(data);  
-          // });
-
-        $('#username').text('poopstain420 ' + x);
+          $.getJSON('api/getUsername', function( data ) {
+            $('#username').text(data);
+          });
       }
 
       refreshUsername();
