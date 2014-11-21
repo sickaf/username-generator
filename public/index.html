@@ -21,12 +21,12 @@
   <body>
     <div class="container-fluid">
       <p>Your username is:</p>
-      <h1 id="username">username</h1>
+      <h1 id="username"></h1>
       <br>
       <button type="button" class="btn btn-default" id="new">New Username</button>
       <br>
       <br>
-      <a href="https://twitter.com/intent/tweet?text=" id="twitter">Tweet this username</a>
+      <a href='#'>Tweet this username</a>
     </div>
 
     <script>
@@ -36,8 +36,10 @@
       });
 
       function refreshUsername() {
-          $.getJSON('api/getUsername', function( data ) {
+          $.get('api/get-username', function( data ) {
             $('#username').text(data);
+            var tweet = 'https://twitter.com/intent/tweet?text=' + 'changing+my+twitter+name+to:+' + data;
+            $("a").attr("href", tweet);
           });
       }
 
