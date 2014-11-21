@@ -39,10 +39,17 @@
         refreshUsername();
       });
 
+      var request;
+
       function refreshUsername() {
+        
+          if (request) {
+            request.abort();
+          }
+
           $('#username').text('');
           setLoading(true);
-          $.get('api/get-username', function( data ) {
+          request = $.get('api/get-username', function( data ) {
             setLoading(false);
             $('#username').text(data);
             var tweet = 'https://twitter.com/intent/tweet?text=' + 'changing+my+twitter+name+to:+' + data;
