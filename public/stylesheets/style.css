@@ -3,15 +3,17 @@ body {
 	text-align: center;
 }
 
-#username {
-	padding: 20px;
-	font-size: 40px;
+#username-container {
+	height: 80px;
 	position: relative;
+}
+
+#username {
+	font-size: 40px;
 }
 
 #new {
 	width: 200px;
-	bor
 }
 
 @media(min-width:768px) {
