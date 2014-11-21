@@ -13,13 +13,15 @@ module.exports = function(app) {
   						'heady',  'messy',      'drunk',    'blood',      'unintended', 
   						'uncool', 'fartridden', 'decrepit', 'justbad',    'impressively',
   						'gross',  'pathetic',   'floppy',   'chrisbrown', 'hurt',
-  						'DJ',     'fragile' ];
+  						'DJ',     'fragile',    'used',     'abused',     'shit',
+  						'fuck' ];
   		
-  		var descriptors = [	'fan',    'dude',           'man',       'doctor',   'expert', 
-  							'thug',   'hero',           'king',      'queen',    'idiot',
-  							'queef',  'muscles',        'splatter',  'satan',    'worshipper', 
-  							'virgin', 'boy',            'girl',      'badbitch', 'sack',
-  							'loser',  'cultworshipper', 'astronaut', 'playboy',  'pounder'];
+  		var descriptors = [	'fan',        'dude',           'man',       'doctor',   'expert', 
+  							'thug',       'hero',           'king',      'queen',    'idiot',
+  							'queef',      'muscles',        'splatter',  'satan',    'worshipper', 
+  							'virgin',     'boy',            'girl',      'badbitch', 'sack',
+  							'loser',      'cultworshipper', 'astronaut', 'playboy',  'pounder',
+  							'asstronaut' ];
   		var numbers = ['420','69',''];
 
   		var noun = nouns[Math.floor(Math.random() * nouns.length)];
