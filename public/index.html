@@ -9,13 +9,11 @@
     <!-- AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
      <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <!-- Twitter web intent -->
-    <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
     <!-- Custom stylesheet -->
     <link href="stylesheets/style.css" rel="stylesheet">
     <!-- Spinner -->
@@ -52,6 +50,12 @@
         
     </div>
 
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Created by <a href="http://sick.af">sick.af</a> | <a href="/api/get-username">API</a></p>
+      </div>
+    </footer>
+
     <script>
 
       $('#new').click(function() {
@@ -71,8 +75,8 @@
           request = $.get('api/get-username', function( data ) {
             setLoading(false);
             $('#username').text(data);
-            var tweet = 'https://twitter.com/intent/tweet?text=' + 'Thanks to usernames420.com, I\'m changing+my+twitter+name+to:+' + data;
-            $("a").attr("href", tweet);
+            var tweet = 'https://twitter.com/intent/tweet?text=' + 'Thanks+to+usernames420.com,+I\'m+changing+my+twitter+name+to:+' + data;
+            $("a[href='#']").attr("href", tweet);
           });
       }
 
@@ -116,6 +120,9 @@
       refreshUsername();
 
     </script>
+
+    <!-- Twitter web intent -->
+    <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
 
   </body>
 </html>
