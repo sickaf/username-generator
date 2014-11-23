@@ -8,20 +8,41 @@ module.exports = function(app) {
 
 	function randomUsername() {
   		
-  		var nouns = [	'fart',   'weed',       'poop',     'snowboard',  'longboarding', 
-  						'blaze',  'pussy',      'meat',     'slippery',   'dumb', 
-  						'heady',  'messy',      'drunk',    'blood',      'unintended', 
-  						'uncool', 'fartridden', 'decrepit', 'justbad',    'impressively',
-  						'gross',  'pathetic',   'floppy',   'chrisbrown', 'hurt',
-  						'DJ',     'fragile',    'used',     'abused',     'shit',
-  						'fuck', ''];
+  		var nouns = [	'fart',     'weed',       'poop',       'snowboard',    'longboarding', 
+  						'blaze',    'pussy',      'meat',       'slippery',     'dumb', 
+  						'heady',    'messy',      'drunk',      'blood',        'unintended', 
+  						'uncool',   'fartridden', 'decrepit',   'justbad',      'impressively',
+  						'gross',    'pathetic',   'floppy',     'chrisbrown',   'hurt',
+  						'DJ',       'fragile',    'used',       'abused',       'shit',
+  						'fuck',     'gushy',      'mushy',      'blast',        'soggy',
+  						'frothy',   'awkward',    'shredded',   'piss',         'puss',
+  						'ass',      'terrible',   'sadistic',   'lackluster',   'unfortunate',
+  						'ebola',    'aids',       'massive',    'herpes',       'gonorrhea',
+  						'diarrhea', 'chlamidia',  'aborted',    'fecal',        'doesntpickuponsocialcues',
+  						'heavyset', 'anorexic',   'bulimic',    'unlucky',      'lucky',
+  						'horrible', 'voluptuous', 'punctual',   'outofshape',   'porous',
+  						'poor',     'divorced',   'athletic',   'unathletic',   'mediocre',
+  						'failed',	'precocious', 'prodigious', 'unremarkable', 'spoiled',
+  						'rotten',   'fresh',      'overdue',    'underaccomplished', 'bionic',
+  						'spent',    'destined',   'underwhelming', 'oozing',      'festering',
+  						'pussing',  'tight',      'splitopen',  'depressing',    'depressed',
+  						'overrated', 'meager',    'homely',     'shitty',        'shit',
+  						'fucky',     'fuck',      'misused',    'abused',        'recycled',
+  						''   ];
   		
   		var descriptors = [	'fan',        'dude',           'man',       'doctor',   'expert', 
   							'thug',       'hero',           'king',      'queen',    'idiot',
   							'queef',      'muscles',        'splatter',  'satan',    'worshipper', 
   							'virgin',     'boy',            'girl',      'badbitch', 'sack',
   							'loser',      'cultworshipper', 'astronaut', 'playboy',  'pounder',
-  							'asstronaut', '' ];
+  							'asstronaut', 'blaster',        'penis',     'cock',     'culo',
+  							'puta',       'piss',           'ass',       'n*****',   'buttfucker',
+  							'cumboy',     'pissboy',        'cumstain',  'ebola',    'aids',
+  							'diarrhea',   'chlamidia',      'abortion',  'fetus',    'athlete',
+  							'failure',    'underwhelmer',   'homie',     'shit',     'fuck',
+  							'fuckboy',    'fuckgirl',       'fuckperson', 'fiend',   'dominator',
+  							'cockboy',    'frothball' ];
+
   		var numbers = ['420','69',''];
 
   		var noun = nouns[Math.floor(Math.random() * nouns.length)];
