@@ -39,12 +39,12 @@
         refreshUsername();
       });
 
-      var request;
+      var refreshing = false;
 
       function refreshUsername() {
 
-          if (request) {
-            request.abort();
+          if (refreshing) {
+            return;
           }
 
           $('#username').text('');
@@ -61,7 +61,9 @@
 
       function setLoading(loading) {
 
-        if (loading) {
+        refreshing = loading;
+
+        if (!spinner) {
           var opts = {
             lines: 11, // The number of lines to draw
             length: 6, // The length of each line
@@ -79,13 +81,16 @@
             zIndex: 2e9, // The z-index (defaults to 2000000000)
             top: '50%', // Top position relative to parent
             left: '50%' // Left position relative to parent
-          };
+          }
 
           spinner = new Spinner(opts).spin();
-          $('#username-container').append(spinner.el);
+        } 
 
+        if (loading) {
+          $('#username-container').append(spinner.el);
         } else {
           spinner.el.remove();
+          spinner = null;
         }
       }
 
