@@ -52,7 +52,7 @@
           request = $.get('api/get-username', function( data ) {
             setLoading(false);
             $('#username').text(data);
-            var tweet = 'https://twitter.com/intent/tweet?text=' + 'changing+my+twitter+name+to:+' + data;
+            var tweet = 'https://twitter.com/intent/tweet?text=' + 'Thanks to usernames420.com, I\'m changing+my+twitter+name+to:+' + data;
             $("a").attr("href", tweet);
           });
       }
