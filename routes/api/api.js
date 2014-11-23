@@ -45,6 +45,8 @@ module.exports = function(app) {
 
   		var numbers = ['420','69',''];
 
+      var numbers = ['420','69',''];
+
   		var noun = nouns[Math.floor(Math.random() * nouns.length)];
   		noun = noun.charAt(0).toUpperCase() + noun.substring(1);
   		var descriptor = descriptors[Math.floor(Math.random() * descriptors.length)];

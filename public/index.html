@@ -4,34 +4,57 @@
     <meta charset="utf-8">
     <title>Username Generator</title>
     <meta name="Generates a fun username (:" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="stylesheets/style.css" rel="stylesheet">
-
+    <!-- AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
      <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <!-- Twitter web intent -->
-    <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <!-- Custom stylesheet -->
+    <link href="stylesheets/style.css" rel="stylesheet">
     <!-- Spinner -->
     <script src="javascripts/spin.min.js"></script>
 
   </head>
   <body>
+
     <div class="container-fluid">
-      <p id="top">Your username is:</p>
-      <div id="username-container">
-        <h1 id="username"></h1>
+
+      <div class="row">
+        <div class="col-md-12">
+          Your username is:
+        </div>
       </div>
-      <br>
-      <button type="button" class="btn btn-default" id="new">New Username</button>
-      <br>
-      <br>
-      <a href='#'>Tweet this username</a>
+
+      <div class="row">
+        <div class="col-md-12" id="username-container">
+          <h2 id="username"></h2>
+        </div>
+      </div>
+
+       <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-default" id="new">New Username</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <a href='#'>Tweet this username</a>
+        </div>
+      </div>
+        
     </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Created by <a href="http://sick.af">sick.af</a> | <a href="/api/get-username">API</a></p>
+      </div>
+    </footer>
 
     <script>
 
@@ -39,12 +62,12 @@
         refreshUsername();
       });
 
-      var request;
+      var refreshing = false;
 
       function refreshUsername() {
 
-          if (request) {
-            request.abort();
+          if (refreshing) {
+            return;
           }
 
           $('#username').text('');
@@ -52,8 +75,8 @@
           request = $.get('api/get-username', function( data ) {
             setLoading(false);
             $('#username').text(data);
-            var tweet = 'https://twitter.com/intent/tweet?text=' + 'changing+my+twitter+name+to:+' + data;
-            $("a").attr("href", tweet);
+            var tweet = 'https://twitter.com/intent/tweet?text=' + 'Thanks+to+usernames420.com,+I\'m+changing+my+twitter+name+to:+' + data;
+            $("a[href='#']").attr("href", tweet);
           });
       }
 
@@ -61,7 +84,9 @@
 
       function setLoading(loading) {
 
-        if (loading) {
+        refreshing = loading;
+
+        if (!spinner) {
           var opts = {
             lines: 11, // The number of lines to draw
             length: 6, // The length of each line
@@ -79,19 +104,25 @@
             zIndex: 2e9, // The z-index (defaults to 2000000000)
             top: '50%', // Top position relative to parent
             left: '50%' // Left position relative to parent
-          };
+          }
 
           spinner = new Spinner(opts).spin();
-          $('#username-container').append(spinner.el);
+        } 
 
+        if (loading) {
+          $('#username-container').append(spinner.el);
         } else {
           spinner.el.remove();
+          spinner = null;
         }
       }
 
       refreshUsername();
 
     </script>
+
+    <!-- Twitter web intent -->
+    <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
 
   </body>
 </html>
