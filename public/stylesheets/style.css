@@ -8,6 +8,9 @@ body {
 h2, .h2{
 	font-size:2em;
 }
+.row {
+	padding-top: 0px;
+}
 
 .footer {
   position: absolute;
