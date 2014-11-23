@@ -5,6 +5,10 @@ body {
 	margin-bottom: 60px;
 }
 
+h2, .h2{
+	font-size:2em;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
