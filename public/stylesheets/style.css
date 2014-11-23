@@ -1,15 +1,15 @@
 body {
+	font-family: Menlo, 'Andale Mono', monospace;
 	padding-top: 40px;
 	text-align: center;
 }
 
-#username-container {
-	height: 80px;
-	position: relative;
+.row {
+	padding: 10px;
 }
 
-#username {
-	font-size: 40px;
+#username-container {
+	height: 50px;
 }
 
 #new {
@@ -17,7 +17,10 @@ body {
 }
 
 @media(min-width:768px) {
-	#username {
+	h2 {
 		font-size: 60px;
+	}
+	#username-container {
+		height: 110px;
 	}
 }

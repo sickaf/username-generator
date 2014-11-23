@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Username Generator</title>
     <meta name="Generates a fun username (:" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="stylesheets/style.css" rel="stylesheet">
-
+    <!-- AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
      <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -16,21 +16,40 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <!-- Twitter web intent -->
     <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
+    <!-- Custom stylesheet -->
+    <link href="stylesheets/style.css" rel="stylesheet">
     <!-- Spinner -->
     <script src="javascripts/spin.min.js"></script>
 
   </head>
   <body>
+
     <div class="container-fluid">
-      <p id="top">Your username is:</p>
-      <div id="username-container">
-        <h1 id="username"></h1>
+
+      <div class="row">
+        <div class="col-md-12">
+          Your username is:
+        </div>
       </div>
-      <br>
-      <button type="button" class="btn btn-default" id="new">New Username</button>
-      <br>
-      <br>
-      <a href='#'>Tweet this username</a>
+
+      <div class="row">
+        <div class="col-md-12" id="username-container">
+          <h2 id="username"></h2>
+        </div>
+      </div>
+
+       <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-default" id="new">New Username</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <a href='#'>Tweet this username</a>
+        </div>
+      </div>
+        
     </div>
 
     <script>
