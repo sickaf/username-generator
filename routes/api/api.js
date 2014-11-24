@@ -14,22 +14,24 @@ module.exports = function(app) {
   						'uncool',    'fartridden', 'decrepit',   'justbad',      'impressively',
   						'gross',     'pathetic',   'floppy',     'chrisbrown',   'hurt',
   						'DJ',        'fragile',    'used',       'abused',       'shit',
-  						'fuck',      'gushy',      'mushy',      'blast',        'soggy',
-  						'frothy',    'awkward',    'shredded',   'piss',         'puss',
+  						'fuck',      'gushy',      'mushy',      'squishy',      'soggy',
+  						'frothy',    'awkward',    'shredded',   'piss',         'yung',
   						'ass',       'terrible',   'sadistic',   'lackluster',   'unfortunate',
   						'ebola',     'aids',       'massive',    'herpes',       'gonorrhea',
-  						'diarrhea',  'chlamidia',  'aborted',    'fecal',        'doesntpickuponsocialcues',
+  						'diarrhea',  'chlamidia',  'aborted',    'fecal',        'generic',
   						'heavyset',  'anorexic',   'bulimic',    'unlucky',      'lucky',
   						'horrible',  'voluptuous', 'punctual',   'outofshape',   'porous',
   						'poor',      'divorced',   'athletic',   'unathletic',   'mediocre',
   						'failed',	 'precocious', 'prodigious', 'unremarkable', 'spoiled',
   						'rotten',    'fresh',      'overdue',    'underaccomplished', 'bionic',
   						'spent',     'destined',   'underwhelming', 'oozing',      'festering',
-  						'pussing',   'tight',      'splitopen',  'depressing',    'depressed',
+  						'pissing',   'tight',      'splitopen',  'depressing',    'depressed',
   						'overrated', 'meager',    'homely',     'shitty',        'shit',
   						'fucky',     'fuck',      'misused',    'abused',        'recycled',
   						'bleeding',  'bloody',    'guttural',   'blasted',       'cute',
-  						'shameless', 'slaughered', 'unapologetic', ''  ];
+  						'shameless', 'slaughtered', 'unapologetic', 'awful', 'stupid',
+              'dumb', 'smelly', 'yummy', 'delicious', 'powerful', 'mouthbreathing',
+              'dumbass', 'incredible', 'vibrating', ''  ];
   		
   		var descriptors = [	'fan',        'dude',           'man',       'doctor',   'expert', 
   							'thug',       'hero',           'king',      'queen',    'idiot',
@@ -37,27 +39,30 @@ module.exports = function(app) {
   							'virgin',     'boy',            'girl',      'badbitch', 'sack',
   							'loser',      'cultworshipper', 'astronaut', 'playboy',  'pounder',
   							'asstronaut', 'blaster',        'penis',     'cock',     'culo',
-  							'puta',       'piss',           'ass',       'n*****',   'buttfucker',
-  							'cumboy',     'pissboy',        'cumstain',  'ebola',    'aids',
+  							'puta',       'piss',           'ass',       'dopeboy',   'buttfucker',
+  							'douche',     'pissboy',        'cumstain',  'ebola',    'aids',
   							'diarrhea',   'chlamidia',      'abortion',  'fetus',    'athlete',
   							'failure',    'underwhelmer',   'homie',     'shit',     'fuck',
   							'fuckboy',    'fuckgirl',       'fuckperson', 'fiend',   'dominator',
   							'cockboy',    'frothball',      'weiner',    'thunderlips', 'meatdrapes',
-  							'thunderlips', 'beefcurtains',  'kumquot',   'obama',     'republican',
-  							'filler'     ];
+  							'thunderlips', 'beefcurtains',  'kumquat',   'obama',     'republican',
+  							'filler', 'democrat' , 'vibrator', 'dildo', 'babe', 'bebe', 'baby'     ];
 
-  		var numbers = ['420','69','xXx', 'XOXO', '2014', '14','2000', '', ''];
+      // Return today's date and time
+      var currentTime = new Date()
+  		var numbers = ['420','69','xXx','XOXO','XO',currentTime.getFullYear(),'2000','','',''];
+
+      var seperators = ['','','','', '_'];
 
   		var noun = nouns[Math.floor(Math.random() * nouns.length)];
   		noun = noun.charAt(0).toUpperCase() + noun.substring(1);
+      var seperator = seperators[Math.floor(Math.random() * seperators.length)];
   		var descriptor = descriptors[Math.floor(Math.random() * descriptors.length)];
   		descriptor = descriptor.charAt(0).toUpperCase() + descriptor.substring(1);
   		var number = numbers[Math.floor(Math.random() * numbers.length)];
   		var res = noun+descriptor+number;
 
-  		if(!(res.length > 4)) return randomUsername();
-
-  		return noun+descriptor+number;
+  		return noun+seperator+descriptor+number;
 	}
 
 }

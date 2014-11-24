@@ -23,35 +23,14 @@
   <body>
 
     <div class="container-fluid">
-
-      <div class="row">
-        <div class="col-md-12">
-          Your username is:
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12" id="username-container">
-          <h2 id="username"></h2>
-        </div>
-      </div>
-
-       <div class="row">
-        <div class="col-md-12">
-          <button type="button" class="btn btn-default" id="new">New Username</button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <a href='#'>Tweet this username</a>
-        </div>
-      </div>
-        
+      <div class="main" id="header">Your username is:</div>
+      <div class="main username-container"><div id="username">ShittyUsername69</div></div>
+      <div class="main" id="refresh-div"><button type="button" class="btn btn-default" id="new">New Username</button></div>
+      <div class="main" id="twitter-link"><a href='https://twitter.com/intent/tweet?text=shittyusernames.com'>Tweet this username</a></div>
     </div>
 
     <footer class="footer">
-      <div class="container">
+      <div class="footer-container">
         <p class="text-muted">Created by <a href="http://sick.af">sick.af</a> | <a href="/api/get-username">API</a></p>
       </div>
     </footer>
@@ -62,6 +41,12 @@
         refreshUsername();
       });
 
+      $('body').keyup(function(e){
+         if(e.keyCode == 32){
+            refreshUsername();
+         }
+      });
+
       var refreshing = false;
 
       function refreshUsername() {
@@ -70,13 +55,12 @@
             return;
           }
 
-          $('#username').text('');
           setLoading(true);
           request = $.get('api/get-username', function( data ) {
             setLoading(false);
             $('#username').text(data);
-            var tweet = 'https://twitter.com/intent/tweet?text=' + 'Thanks+to+usernames420.com,+I\'m+changing+my+twitter+name+to:+' + data;
-            $("a[href='#']").attr("href", tweet);
+            var tweet = 'https://twitter.com/intent/tweet?text=' + 'Changing+my+twitter+name+to+' + data + '+thanks+to+shittyusernames.com';
+            $("a[href^='https://twitter.com/intent/tweet']").attr("href", tweet);
           });
       }
 
@@ -88,10 +72,10 @@
 
         if (!spinner) {
           var opts = {
-            lines: 11, // The number of lines to draw
-            length: 6, // The length of each line
+            lines: 8, // The number of lines to draw
+            length: 2, // The length of each line
             width: 2, // The line thickness
-            radius: 14, // The radius of the inner circle
+            radius: 4, // The radius of the inner circle
             corners: 1, // Corner roundness (0..1)
             rotate: 0, // The rotation offset
             direction: 1, // 1: clockwise, -1: counterclockwise
@@ -110,8 +94,10 @@
         } 
 
         if (loading) {
-          $('#username-container').append(spinner.el);
+          $('#username').css('opacity', '0.0');
+          $('.username-container').append(spinner.el);
         } else {
+          $('#username').css('opacity', '1.0');
           spinner.el.remove();
           spinner = null;
         }
